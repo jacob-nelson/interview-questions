@@ -97,6 +97,7 @@ Here's a breakdown of view encapsulation in Angular:
 Prevents Style Conflicts: Without encapsulation, styles defined in one component could unintentionally affect styles in other components, leading to a mess.
 Improved Maintainability: Encapsulation promotes cleaner code by keeping styles specific to each component.
 Reusable Components: Styles are encapsulated within the component, making it more reusable without affecting the styles of other components.
+
 **How does it work?**
 
 Angular offers three view encapsulation options:
