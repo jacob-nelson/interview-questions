@@ -113,6 +113,7 @@ Angular offers three view encapsulation options:
 - Emulated (default): A good choice for most cases. It provides a balance between isolation and browser compatibility.
 - Shadow DOM: Ideal for stricter isolation, especially for reusable components or complex applications. Consider browser compatibility if targeting older browsers.
 - None: Avoid unless absolutely necessary due to the high risk of style conflicts.
+
 **Additional points:**
 
 You can configure the encapsulation mode using the encapsulation property in the @Component decorator.
