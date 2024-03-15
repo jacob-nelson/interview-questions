@@ -86,3 +86,34 @@ Angular's router enables navigation between different components while keeping t
 - BehaviorSubject: Remembers the last emitted value and replays it to new subscribers upon subscription.
 - Subject: Suitable for creating new data streams or broadcasting updates to all subscribers.
 - BehaviorSubject: Useful for establishing shared state across different parts of your application or ensuring new subscribers receive the latest information.
+### Explain View encapsulation
+
+View encapsulation is a mechanism in Angular that helps isolate the styles of a component from the styles of other components. This prevents styles from bleeding between components and causing unexpected visual issues.
+
+Here's a breakdown of view encapsulation in Angular:
+
+**Why is it important?**
+
+Prevents Style Conflicts: Without encapsulation, styles defined in one component could unintentionally affect styles in other components, leading to a mess.
+Improved Maintainability: Encapsulation promotes cleaner code by keeping styles specific to each component.
+Reusable Components: Styles are encapsulated within the component, making it more reusable without affecting the styles of other components.
+**How does it work?**
+
+Angular offers three view encapsulation options:
+
+- Emulated (default): This is the default behavior. Angular adds a unique attribute to the component's host element and styles, effectively scoping them to the component's view.
+
+- None: This disables encapsulation. Styles defined in the component are applied globally, potentially affecting other components. It's generally not recommended due to the risk of style conflicts.
+
+- Shadow DOM: This leverages the browser's Shadow DOM API to create a truly isolated environment for the component's view and styles. It offers the strongest encapsulation but might have limited browser support for older browsers.
+
+**Choosing the right encapsulation:**
+
+- Emulated (default): A good choice for most cases. It provides a balance between isolation and browser compatibility.
+- Shadow DOM: Ideal for stricter isolation, especially for reusable components or complex applications. Consider browser compatibility if targeting older browsers.
+- None: Avoid unless absolutely necessary due to the high risk of style conflicts.
+**Additional points:**
+
+You can configure the encapsulation mode using the encapsulation property in the @Component decorator.
+Encapsulation applies to styles defined within the component's template (<style>) and stylesheets referenced using styleUrls.
+By effectively using view encapsulation, you can create cleaner, more maintainable, and reusable Angular components with well-defined visual styles.
