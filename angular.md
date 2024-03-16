@@ -130,6 +130,7 @@ standalone components are a new feature introduced in version 14 that allows you
 
 - Standalone components are a special type of Angular component that doesn't need to be declared within an NgModule.
 - They are self-contained units with their own template, logic, and dependencies.
+- Standalone components offer a powerful and flexible way to build Angular applications. They simplify component creation, improve code organization, and make component sharing more efficient.
 
 #### Benefits:
 
