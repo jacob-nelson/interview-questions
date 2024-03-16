@@ -119,3 +119,49 @@ Angular offers three view encapsulation options:
 You can configure the encapsulation mode using the encapsulation property in the @Component decorator.
 Encapsulation applies to styles defined within the component's template (<style>) and stylesheets referenced using styleUrls.
 By effectively using view encapsulation, you can create cleaner, more maintainable, and reusable Angular components with well-defined visual styles.
+
+### Define `standalone` components and their benefits
+
+standalone components are a new feature introduced in version 14 that allows you to create reusable UI components without requiring them to be part of an NgModule. This offers several benefits and can streamline your development process.
+
+#### Here's a breakdown of standalone components in Angular:
+
+**What are they?**
+
+- Standalone components are a special type of Angular component that doesn't need to be declared within an NgModule.
+- They are self-contained units with their own template, logic, and dependencies.
+
+#### Benefits:
+
+- **Simpler Component Creation:** You don't need to create or manage NgModules specifically for these components.
+- **Improved Code Organization:** Standalone components promote a more modular approach, keeping your code focused on the component itself.
+- **Easier Sharing:** Standalone components can be easily shared with other projects without requiring specific NgModule dependencies.
+
+#### How to Create Them:
+
+- **Component Class:** Define your component class as usual, extending the `Component` class from `@angular/core`.
+- **Standalone Flag:** Use the `standalone: true` property in the component decorator. This indicates it's a standalone component.
+- **Template and Logic:** Implement your component's template logic as you would with any other Angular component.
+- **Imports (Optional):** If the component requires external directives, pipes, or other standalone components, you can import them directly within the component class.
+
+#### Example:
+
+```
+import { Component, standalone } from '@angular/core';
+
+@Component({
+  selector: 'app-my-standalone-component',
+  standalone: true,
+  template: `
+    <h1>This is a standalone component!</h1>
+  `
+})
+export class MyStandaloneComponent { }
+
+```
+
+| Feature | Standalone Component | Regular Component |
+|---|---|---|
+| NgModule | Not required | required |
+| Code Organization | More modular | Potentially less modular |
+| Sharing | Easier to share | Required NgModule consideration |
