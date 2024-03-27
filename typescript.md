@@ -20,9 +20,11 @@ Types in TypeScript allow you to specify the data type of a variable, parameter,
 ### What are custom types?
 custom types are user-defined data structures that go beyond the basic built-in types like number, string, and boolean. They allow you to create complex data structures that represent specific entities or concepts within your application, improving code clarity, type safety, and maintainability. custom types help to define aliases for existing types or create new types using unions, intersections, tuples, and more.
 ### Explain the concept of static typing in TypeScript.
-- Static typing means specifying the data types of variables at compile time.
-TypeScript helps catch type-related errors early in the development process. 23. What is the "any" type in TypeScript?
-- The "any" type in TypeScript allows variables to have any data type. It is often used when the type of a variable is not known during development.
+Static typing means specifying the data types of variables at compile time.
+TypeScript helps catch type-related errors early in the development process.
+
+### What is the "any" type in TypeScript?
+The "any" type in TypeScript allows variables to have any data type. It is often used when the type of a variable is not known during development.
 ### What is a union type in TypeScript?
 - A union type in TypeScript allows a variable to have multiple types. It is represented using the | operator. 25. What is TypeScript's "tuple" type?
 - A tuple in TypeScript is an ordered array with a fixed number of elements, each of which can have a different data type.
