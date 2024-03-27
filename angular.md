@@ -78,14 +78,15 @@ Angular's router enables navigation between different components while keeping t
 - Observables are often considered more powerful and flexible than Promises, but they also have a steeper learning curve.
 - Both Promises and Observables can be used in conjunction with libraries like RxJS for more advanced operations and data transformations.
 ### What are the differences between subject and behavior subject?
-- Subject: Has no initial value. Subscribers only receive values emitted after they subscribe.
-- BehaviorSubject: Holds an initial value and immediately emits it to any new subscriber.
-- Subject: Emits values only when next is called.
-- BehaviorSubject: Emits the initial value and then any subsequent values called with next.
-- Subject: Does not replay past values. New subscribers only receive future values.
-- BehaviorSubject: Remembers the last emitted value and replays it to new subscribers upon subscription.
-- Subject: Suitable for creating new data streams or broadcasting updates to all subscribers.
-- BehaviorSubject: Useful for establishing shared state across different parts of your application or ensuring new subscribers receive the latest information.
+
+| Subject |BehaviorSubject |
+|---|---|
+|Has no initial value. Subscribers only receive values emitted after they subscribe.|Holds an initial value and immediately emits it to any new subscriber.|
+|Emits values only when next is called.|Emits the initial value and then any subsequent values called with next.|
+|Does not replay past values. New subscribers only receive future values.|Remembers the last emitted value and replays it to new subscribers upon subscription.|
+|Suitable for creating new data streams or broadcasting updates to all subscribers.|Useful for establishing shared state across different parts of your application or ensuring new subscribers receive the latest information.|
+
+
 ### Explain View encapsulation
 
 View encapsulation is a mechanism in Angular that helps isolate the styles of a component from the styles of other components. This prevents styles from bleeding between components and causing unexpected visual issues.
