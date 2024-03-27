@@ -26,12 +26,14 @@ TypeScript helps catch type-related errors early in the development process.
 ### What is the "any" type in TypeScript?
 The "any" type in TypeScript allows variables to have any data type. It is often used when the type of a variable is not known during development.
 ### What is a union type in TypeScript?
-- A union type in TypeScript allows a variable to have multiple types. It is represented using the | operator. 25. What is TypeScript's "tuple" type?
-- A tuple in TypeScript is an ordered array with a fixed number of elements, each of which can have a different data type.
+A union type in TypeScript allows a variable to have multiple types. It is represented using the | operator.
+### What is TypeScript's "tuple" type?
+A tuple in TypeScript is an ordered array with a fixed number of elements, each of which can have a different data type.
 ### What is the "never" type in TypeScript?
-- The "never" type is used to represent values that never occur. It is often used
-in functions that throw exceptions or enter infinite loops. 27. Describe TypeScript's type assertion.
- - Type assertion in TypeScript is a way to tell the compiler about the type of a variable when the developer knows more about its type than the compiler does.
+The "never" type is used to represent values that never occur. It is often used
+in functions that throw exceptions or enter infinite loops.
+### Describe TypeScript's type assertion.
+Type assertion in TypeScript is a way to tell the compiler about the type of a variable when the developer knows more about its type than the compiler does.
 ### Explain the "class" and "inheritance" concepts in TypeScript.
 Classes in TypeScript allow you to create objects with properties and methods. Inheritance enables a class to inherit properties and methods from another class.
 ### Explain the difference between any and unknown types.
