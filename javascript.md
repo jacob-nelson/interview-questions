@@ -22,3 +22,5 @@ The main differences between replaceAll() and replace() in JavaScript lie in the
 | Replaces | First occurrence | All occurrences|
 | Global flag (g) | Required for replacing all occurrences | Not required, all occurrences replaced by default |
 | Browser support | Widely supported | Modern browsers (consider polyfills for older browsers) |
+
+### what is spread operator?
