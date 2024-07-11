@@ -37,6 +37,9 @@ Angular services are singleton objects that can be injected into components and 
 `NgModule` is used to define a modular structure for organising and managing Angular applications. It helps in organizing components, services, and other Angular features.
 ### Explain the ngOnChanges lifecycle hook.
 `ngOnChanges` is a lifecycle hook in Angular that is called when the data-bound properties of a component change. It receives a SimpleChanges object that contains the current and previous values of the bound properties.
+### when is ngonchanges lifecycle hook called?
+ngOnChanges gets called before ngOnInit and whenever a component's bound input is changed FROM THE PARENT COMPONENT. Remember that ngOnChanges is specific to bound inputs on the component. This means if you don't have any @Input properties on a child, ngOnChanges will never get called.
+
 ### What is dependency injection in Angular?
 Dependency injection is a design pattern in which the dependencies of a component or service are provided from the outside, typically by the framework. Angular's DI system is responsible for injecting dependencies.
 ### How does routing work in Angular?
