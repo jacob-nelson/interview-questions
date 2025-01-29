@@ -5,6 +5,9 @@ date: 2024-03-14
 tags: [javascript, tutorial, interview]
 ---
 
+### what is the data type of null?
+`typeof null` is `object`
+
 ### difference between `replaceAll()` and `replace()` methods
 
 The main differences between replaceAll() and replace() in JavaScript lie in their behavior and browser support:
