@@ -87,3 +87,31 @@ const [first, ...rest] = [1, 2, 3, 4];
  Notes
 - Only the own enumerable properties are copied for objects.
 - It's a shallow copy – nested objects or arrays are not deeply cloned.
+
+### what is difference between var and let?
+
+`var`: Introduced before ES5. Function Scoped (Not block-scoped). Allows re-declaration and hoisting, which can lead to bugs.
+
+```
+function testVar(){
+    var x = 10;
+    if(true){
+        var x = 20; // Same Variable! This will overwrite the previous x
+        console.log(x); // Outputs: 20
+    }
+    console.log(x); // Outputs: 20, because var is function-scoped
+}
+```
+
+`let`: Introduced in ES6. Block-Scoped - respects {} boundaries like if statements, loops. Cannot be redeclared in the same scope. Mutable (can be reassigned)
+
+```
+let a = 5;
+a = 10; // This is a allowed
+
+if(true) {
+  let a = 20;   Different scope, so this is allowed
+  console.log(a); // Outputs: 20
+}
+console.log(a); // Outputs: 10
+```
