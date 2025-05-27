@@ -88,7 +88,7 @@ const [first, ...rest] = [1, 2, 3, 4];
 - Only the own enumerable properties are copied for objects.
 - It's a shallow copy – nested objects or arrays are not deeply cloned.
 
-### what is difference between var and let?
+### what is difference between var, let and const?
 
 `var`: Introduced before ES5. Function Scoped (Not block-scoped). Allows re-declaration and hoisting, which can lead to bugs.
 
@@ -114,4 +114,14 @@ if(true) {
   console.log(a); // Outputs: 20
 }
 console.log(a); // Outputs: 10
+```
+
+`const`: Introduced in ES6. Block-Scoped like let. Cannot be reassigned after it's initial assignment. Good for defining constants and preventing accidental changes.
+
+```
+const name = "tux";
+name = "Tux the Penguin"; // This line will throw an error because 'name' is a constant
+
+const user = {age: 30};
+user.age = 31; // This is allowed because 'user' is a mutable object. object reference is constant, but its properties can change.
 ```
