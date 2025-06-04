@@ -9,6 +9,12 @@ tags: [javascript, tutorial, interview]
 
 JavaScript provides eight different data types which are `undefined`, `null`, `boolean`, `string`, `symbol`, `bigint`, `number`, and `object`.
 
+### string literal
+
+A string literal, or string, is a series of zero or more characters enclosed in single or double quotes.
+
+`var myName = "your name";`
+
 ### what is the data type of null?
 `typeof null` is `object`
 
