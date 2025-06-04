@@ -127,6 +127,7 @@ console.log(a); // Outputs: 10
 ```
 
 `const`: Introduced in ES6. Block-Scoped like let. Cannot be reassigned after it's initial assignment. Good for defining constants and preventing accidental changes.
+variables declared using `const` are ***read-only***. They are a constant value, which means that once a variable is assigned with `const`, it cannot be reassigned:
 
 ```
 const name = "tux";
