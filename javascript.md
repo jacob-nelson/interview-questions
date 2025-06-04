@@ -5,6 +5,10 @@ date: 2024-03-14
 tags: [javascript, tutorial, interview]
 ---
 
+## data types
+
+JavaScript provides eight different data types which are `undefined`, `null`, `boolean`, `string`, `symbol`, `bigint`, `number`, and `object`.
+
 ### what is the data type of null?
 `typeof null` is `object`
 
