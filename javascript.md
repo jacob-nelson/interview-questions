@@ -38,6 +38,29 @@ The main differences between replaceAll() and replace() in JavaScript lie in the
 | Global flag (g) | Required for replacing all occurrences | Not required, all occurrences replaced by default |
 | Browser support | Widely supported | Modern browsers (consider polyfills for older browsers) |
 
+### nullish coalescing operator (??)
+
+The `??` operator in JavaScript is known as the nullish coalescing operator. It provides a concise way to handle default values when dealing with potentially null or undefined values.
+
+#### Functionality:
+
+The `??` operator evaluates its left-hand operand. If the left-hand operand is not null or undefined, it returns that value. However, if the left-hand operand is either null or undefined, it returns the right-hand operand.
+
+```
+const value = null;
+const defaultValue = "Default Value";
+const result = value ?? defaultValue;
+console.log(result); // Output: "Default Value"
+```
+
+In this example, because value is null, the ?? operator returns the defaultValue.
+
+#### Key Differences from || (Logical OR):
+
+The logical OR operator (||) also provides a way to handle default values. However, it treats values like 0, '' (empty string), and false as "falsy," and would return the right-hand operand in those cases.
+The ?? operator only considers null and undefined as nullish, making it more suitable for situations where you need to differentiate between actual null or undefined values and other falsy values.
+
+
 ### what is spread operator?
 
 The JavaScript spread operator (...) is a powerful and concise syntax that allows you to:
