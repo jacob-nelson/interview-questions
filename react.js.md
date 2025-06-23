@@ -28,6 +28,85 @@ The few limitations of React are as given below:
 - It might be difficult for beginner programmers to understand React.
 - Coding might become complex as it will make use of inline templating and JSX.
 
+### What is useState() in React?
+
+The `useState()` is a built-in React Hook that allows you for having state variables in functional components. It should be used when the DOM has something that is dynamically manipulating/controlling.
+
+```jsx
+import { useState } from 'react';
+
+export default function CounterExample() {
+  // useState returns an array with two elements:
+  // 1. The current state value
+  // 2. A function to update the state
+  const [count, setCount] = useState(0);
+  const [name, setName] = useState('');
+  const [isVisible, setIsVisible] = useState(true);
+
+  return (
+    <div className="max-w-md mx-auto mt-8 p-6 bg-white rounded-lg shadow-lg">
+      <h1 className="text-2xl font-bold mb-6 text-gray-800">useState Examples</h1>
+      
+      {/* Counter Example */}
+      <div className="mb-6 p-4 border rounded-lg">
+        <h2 className="text-lg font-semibold mb-3">Counter</h2>
+        <p className="mb-3 text-gray-600">Count: {count}</p>
+        <div className="space-x-2">
+          <button 
+            onClick={() => setCount(count + 1)}
+            className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
+          >
+            Increment
+          </button>
+          <button 
+            onClick={() => setCount(count - 1)}
+            className="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600"
+          >
+            Decrement
+          </button>
+          <button 
+            onClick={() => setCount(0)}
+            className="px-4 py-2 bg-gray-500 text-white rounded hover:bg-gray-600"
+          >
+            Reset
+          </button>
+        </div>
+      </div>
+
+      {/* Text Input Example */}
+      <div className="mb-6 p-4 border rounded-lg">
+        <h2 className="text-lg font-semibold mb-3">Text Input</h2>
+        <input
+          type="text"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          placeholder="Enter your name"
+          className="w-full p-2 border rounded mb-2"
+        />
+        <p className="text-gray-600">
+          {name ? `Hello, ${name}!` : 'Please enter your name'}
+        </p>
+      </div>
+
+      {/* Toggle Example */}
+      <div className="p-4 border rounded-lg">
+        <h2 className="text-lg font-semibold mb-3">Toggle Visibility</h2>
+        <button
+          onClick={() => setIsVisible(!isVisible)}
+          className="px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600 mb-3"
+        >
+          {isVisible ? 'Hide' : 'Show'} Message
+        </button>
+        {isVisible && (
+          <div className="p-3 bg-green-100 border border-green-300 rounded">
+            <p className="text-green-800">This message can be toggled!</p>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
+```
 
 
 ### what is suspense?
