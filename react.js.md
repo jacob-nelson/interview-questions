@@ -108,6 +108,144 @@ export default function CounterExample() {
 }
 ```
 
+### What are keys in React?
+
+A key is a special string attribute that needs to be included when using lists of elements.
+
+*Why Keys Matter*
+Keys help React identify which items have changed, been added, or removed. This enables efficient updates and preserves component state.
+
+✅ Key Best Practices:
+
+- Use unique, stable IDs (like database IDs)
+- Don't use array indices if the list can change
+- Keys should be consistent between renders
+- Keys only need to be unique among siblings
+- Don't generate keys on the fly (Math.random(), Date.now())
+
+```jsx
+import { useState } from 'react';
+
+export default function ReactKeyExample() {
+  const [items, setItems] = useState([
+    { id: 1, name: 'Apple', color: 'red' },
+    { id: 2, name: 'Banana', color: 'yellow' },
+    { id: 3, name: 'Orange', color: 'orange' }
+  ]);
+  
+  const [newItem, setNewItem] = useState('');
+  const [counter, setCounter] = useState(4);
+
+  const addItem = () => {
+    if (newItem.trim()) {
+      const colors = ['red', 'blue', 'green', 'purple', 'pink'];
+      const randomColor = colors[Math.floor(Math.random() * colors.length)];
+      
+      setItems([
+        { id: counter, name: newItem, color: randomColor },
+        ...items
+      ]);
+      setNewItem('');
+      setCounter(counter + 1);
+    }
+  };
+
+  const removeItem = (id) => {
+    setItems(items.filter(item => item.id !== id));
+  };
+
+  const shuffleItems = () => {
+    const shuffled = [...items].sort(() => Math.random() - 0.5);
+    setItems(shuffled);
+  };
+
+  return (
+    <div className="max-w-2xl mx-auto mt-8 p-6 bg-white rounded-lg shadow-lg">
+      <h1 className="text-2xl font-bold mb-6 text-gray-800">React Key Example</h1>
+
+      {/* Add new item */}
+      <div className="mb-6 p-4 border rounded-lg">
+        <h3 className="font-semibold mb-3">Add New Item</h3>
+        <div className="flex gap-2">
+          <input
+            type="text"
+            value={newItem}
+            onChange={(e) => setNewItem(e.target.value)}
+            placeholder="Enter item name"
+            className="flex-1 p-2 border rounded"
+            onKeyPress={(e) => e.key === 'Enter' && addItem()}
+          />
+          <button
+            onClick={addItem}
+            className="px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600"
+          >
+            Add
+          </button>
+        </div>
+      </div>
+
+      {/* Controls */}
+      <div className="mb-6">
+        <button
+          onClick={shuffleItems}
+          className="px-4 py-2 bg-purple-500 text-white rounded hover:bg-purple-600 mr-2"
+        >
+          Shuffle Items
+        </button>
+        <span className="text-sm text-gray-600">
+          Notice how input focus is preserved when shuffling
+        </span>
+      </div>
+
+      {/* Items list with proper keys */}
+      <div className="space-y-3">
+        <h3 className="font-semibold">Items (with proper keys):</h3>
+        {items.map((item) => (
+          <div
+            key={item.id} // ✅ Using unique, stable ID as key
+            className="flex items-center justify-between p-3 border rounded-lg bg-gray-50"
+          >
+            <div className="flex items-center gap-3">
+              <div
+                className="w-4 h-4 rounded-full"
+                style={{ backgroundColor: item.color }}
+              ></div>
+              <span className="font-medium">{item.name}</span>
+              <input
+                type="text"
+                placeholder="Try typing here..."
+                className="ml-2 p-1 text-xs border rounded"
+              />
+            </div>
+            <button
+              onClick={() => removeItem(item.id)}
+              className="px-3 py-1 bg-red-500 text-white text-sm rounded hover:bg-red-600"
+            >
+              Remove
+            </button>
+          </div>
+        ))}
+      </div>
+
+      {/* Bad example for comparison */}
+      <div className="mt-8 p-4 bg-red-50 border border-red-200 rounded-lg">
+        <h3 className="font-semibold mb-3 text-red-800">❌ Bad Example (using index as key):</h3>
+        <p className="text-red-700 text-sm mb-3">
+          This would cause issues when items are reordered or removed:
+        </p>
+        <div className="bg-gray-100 p-3 rounded font-mono text-sm">
+          {`{items.map((item, index) => (
+  <div key={index}> // ❌ BAD: using index
+    {item.name}
+  </div>
+))}`}
+        </div>
+      </div>
+    </div>
+  );
+}
+```
+
 
 ### what is suspense?
 [Suspense](https://react.dev/reference/react/Suspense)
